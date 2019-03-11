@@ -4,7 +4,17 @@ main() {
   runApp(Cursoudemy());
 }
 
-class Cursoudemy extends StatelessWidget {
+class Cursoudemy extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState(){
+
+    return _CursoudemyState();
+  }
+
+}
+
+class _CursoudemyState extends State<Cursoudemy> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
