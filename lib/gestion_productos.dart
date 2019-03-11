@@ -4,7 +4,7 @@ import './productos.dart';
 class GestionProductos extends StatefulWidget {
 
   String productoInicial;
-  GestionProductos(this.productoInicial);
+  GestionProductos({this.productoInicial = 'Drone Test'});
 
   @override
   State<StatefulWidget> createState() {

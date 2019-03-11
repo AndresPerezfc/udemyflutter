@@ -9,12 +9,17 @@ class Cursoudemy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.deepOrange,
+        accentColor: Colors.deepPurpleAccent,
+      ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: new Text('Curso Udemy'),
         ),
-        body: GestionProductos('Monitor Led'), 
+        body: GestionProductos(productoInicial: 'Monitor Led'), 
       ),
     );
   }
