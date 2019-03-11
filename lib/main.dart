@@ -6,14 +6,14 @@ main() {
 
 class Cursoudemy extends StatefulWidget {
   @override
-  State<StatefulWidget> createState(){
-
+  State<StatefulWidget> createState() {
     return _CursoudemyState();
   }
-
 }
 
 class _CursoudemyState extends State<Cursoudemy> {
+  List<String> _productos = ['Monitor'];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,19 +26,27 @@ class _CursoudemyState extends State<Cursoudemy> {
           children: <Widget>[
             Container(
               margin: EdgeInsets.all(10.0),
-              child: RaisedButton(
-                onPressed: () {}, 
-                child: Text('Añadir tarjeta')
-                ),
+              child:
+                  RaisedButton(
+                    onPressed: () {
+                      setState(() {
+                        _productos.add('Telefono');
+                      });
+                  }, 
+                  child: Text('Añadir tarjeta')),
             ),
-            Card(
-              child: Column(
-                children: <Widget>[
-                  Image.asset('assets/imagen1.jpg'),
-                  Text('Imagen Añadida'),
-                ],
-              ),
-            ),
+            Column(
+              children: _productos.map(
+                (element) => Card(
+                      child: Column(
+                        children: <Widget>[
+                          Image.asset('assets/imagen1.jpg'),
+                          Text(element),
+                        ],
+                      ),
+                    ),
+              ).toList(),
+            )
           ],
         ),
       ),
